@@ -38,4 +38,7 @@ class Student
     SQL
     DB[:conn].execute(sql, name).map {|song| self.new_from_db(song)}.first
   end
+
+  def self.all_students_in_grade_9
+  end
 end
