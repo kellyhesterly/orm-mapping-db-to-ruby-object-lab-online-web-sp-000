@@ -51,6 +51,9 @@ class Student
   end
 
   def self.students_below_12th_grade
-    DB[:conn].execute("SELECT * FROM students WHERE grade IS NOT 12")
+    sql = <<-SQL
+    SELECT * FROM students WHERE grade < 12
+    SQL
+    DB[:conn].execute(sql).map {|row| new_from_db(row)}
   end
 end
