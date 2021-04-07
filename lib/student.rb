@@ -36,6 +36,6 @@ class Student
     sql = <<-SQL
       "SELECT * FROM students WHERE name = ?;"
     SQL
-    DB[:conn].execute(sql, name).map {|song|  }
+    DB[:conn].execute(sql, name).map {|song| self.new_from_db(song)  }
   end
 end
