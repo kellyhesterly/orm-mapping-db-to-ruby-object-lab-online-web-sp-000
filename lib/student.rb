@@ -2,6 +2,10 @@ class Student
   attr_accessor :name, :grade, :id
 
   def self.all
+    sql = <<-SQL
+    SELECT * FROM students
+    SQL
+    DB[:conn].execute(sql).map {|row| self.new_from_db(row)}
   end
 
   def self.create_table
