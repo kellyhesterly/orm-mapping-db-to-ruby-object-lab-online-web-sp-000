@@ -51,6 +51,6 @@ class Student
   end
 
   def self.students_below_12th_grade
-    DB[:conn].execute("SELECT * FROM students WHERE grade = 9 && 10 && 11")
+    DB[:conn].execute("SELECT * FROM students WHERE grade IS NOT 12")
   end
 end
