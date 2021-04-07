@@ -12,5 +12,5 @@ class Student
   end
 
   def self.drop_table
-    emd
+  end
 end
