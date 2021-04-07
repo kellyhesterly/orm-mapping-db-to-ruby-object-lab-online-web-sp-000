@@ -25,5 +25,7 @@ class Student
   end
 
   def self.new_from_db
+    student = self.new
+
   end
 end
