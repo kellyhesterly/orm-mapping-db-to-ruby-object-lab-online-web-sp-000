@@ -36,6 +36,6 @@ class Student
     sql = <<-SQL
       "SELECT * FROM students WHERE name = ? LIMIT 1;"
     SQL
-    DB[:conn].execute(sql, name).map {|song| self.new_from_db(song)}
+    DB[:conn].execute(sql, name).map {|song| self.new_from_db(song)}.first
   end
 end
